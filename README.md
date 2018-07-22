@@ -13,4 +13,4 @@ This is a service that fashion recommender for novice.
 ## Update History
 
 * 180723
-	1. 개발 착수
+	* 개발 착수
