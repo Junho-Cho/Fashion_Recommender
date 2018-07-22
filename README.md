@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a service that fashion recommender for novice.
 
-Things you may want to cover:
+|No.|Name|
+:---:|:---:
+|1|공영진|
+|2|양혜리|
+|3|유효민|
+|4|조준호|
+|5|최종성|
 
-* Ruby version
+## Update History
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* 180723
+	1. 개발 착수
