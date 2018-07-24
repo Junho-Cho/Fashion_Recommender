@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  root 'main#home'
+
+  get 'main/judge'
+
+  get 'main/doctor'
+
+  get 'main/market'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root "home#index"
 end
