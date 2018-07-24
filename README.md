@@ -14,3 +14,5 @@ This is a service that fashion recommender for novice.
 
 * 180723
 	* 개발 착수
+* 180724
+	* 메인화면 일부 디자인 /CHO
