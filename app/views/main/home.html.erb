@@ -21,8 +21,20 @@
       </ul>
     </div>
     <form class="form-inline">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin-right:10px;">로그인</button>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">회원가입</button>
+        <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin-right:10px;">로그인</button>-->
+        <% if user_signed_in? %>
+        	<!--<li><%=current_user.email%></li>-->
+        	<%=link_to destroy_user_session_path, method: :delete do%>
+        		<button class="btn btn-secondary btn-sm my-2 my-sm-0" type="submit">로그아웃</button>
+        	<%end%>
+        <% else %>
+	        <%=link_to new_user_session_path do%>
+			    <button class="btn btn-secondary btn-sm my-2 my-sm-0" type="submit" style="margin-right: 10px;">로그인</button>
+			<%end%>
+        	<%=link_to new_user_registration_path do%>
+        		<button class="btn btn-secondary btn-sm my-2 my-sm-0" type="submit">회원가입</button>
+        	<%end%>
+        <%end%>
     </form>
   </div>
 </nav>
@@ -57,7 +69,7 @@
 <div class="card-group" style="margin-top:100px; margin-right:auto; margin-left:auto;">
   <div class="card border-0">
     <!--<img class="card-img-top" src="/test_icon.png" alt="Card image cap">-->
-    <i class="fas fa-gavel fa-7x" style="margin: 0 auto; margin-bottom: 30px; color: #FE2E2E"></i>
+    <i class="fas fa-gavel fa-7x" id="card-img-top" style="margin: 0 auto; margin-bottom: 30px; color: #FE2E2E;"></i>
     <div class="card-body">
       <a href="/main/judge"><h5 class="card-title">스타일 재판소</h5></a>
       <p class="card-text">내 스타일은 몇 점일까요? 나만의 스타일을 자랑하고 평가받아보세요. 각종 리워드가 기다립니다!</p>
@@ -65,7 +77,7 @@
   </div>
   <div class="card border-0" href="/main/doctor">
     <!--<img class="card-img-top" src="/test_icon.png" alt="Card image cap">-->
-    <i class="fas fa-user-md fa-7x" style="margin: 0 auto; margin-bottom: 30px; color: orange"></i>
+    <i class="fas fa-user-md fa-7x" id="card-img-top" style="margin: 0 auto; margin-bottom: 30px; color: orange;"></i>
     <div class="card-body">
       <a href="/main/doctor"><h5 class="card-title">스타일 닥터</h5></a>
       <p class="card-text">제 스타일을 치료해주세요! 나에게 딱 맞는 코디법도 알아보고, 나만의 멘토도 찾아보세요!</p>
@@ -73,10 +85,20 @@
   </div>
   <div class="card border-0" href="/main/market">
     <!--<img class="card-img-top" src="/test_icon.png" alt="Card image cap">-->
-    <i class="fas fa-cart-plus fa-7x" style="margin: 0 auto; margin-bottom: 30px; color: #D7DF01"></i>
+    <i class="fas fa-cart-plus fa-7x" id="card-img-top" style="margin: 0 auto; margin-bottom: 30px; color: #D7DF01;"></i>
     <div class="card-body">
       <a href="/main/market"><h5 class="card-title">중고장터</h5></a>
       <p class="card-text">옷장에 안 입는 옷들이 잔뜩 쌓여있나요? 도저히 입을 옷이 없나요? 안전하고 간편하게 사고 파세요!</p>
     </div>
   </div>
 </div>
+
+<script>
+	$( document ).ready( function() {
+		$(window).scroll(function() {
+		  if($(this).scrollTop() > 150) {
+		  	$('.card-group').fadeTo(1000, 1);
+		  }
+		});
+	});
+</script>
