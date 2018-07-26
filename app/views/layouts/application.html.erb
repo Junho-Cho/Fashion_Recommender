@@ -8,6 +8,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
     <script>
       $( document ).ready( function() {
@@ -27,12 +30,23 @@
   </head>
 
   <body>
-
     <%= yield %>
 
     <div class="back-to-top" style="position: fixed; bottom: 20px; right: 20px;">
       <a class="top" title="GO TO TOP" href="#"><i class="fas fa-arrow-circle-up fa-3x" style="color:gray"></i></a>
     </div>
+
+    <footer class="container" style="margin-top: 70px; margin-bottom: 50px; text-align: center;">
+      <hr class="footer">
+      <small>
+        <!--<img src="/likelion_logo.jpg" width="50px" height="50px">-->
+        멋쟁이 사자처럼 성균관대 자연과학캠퍼스<br>
+        <i class="fab fa-facebook-square"></i>
+        <a href="https://www.facebook.com/likelionsuwonskku/" style="margin-right: 20px;">Facebook</a>
+        <i class="fab fa-github-square"></i>
+        <a href="https://github.com/Junho-Cho/Fashion_Recommender">Github</a>
+      </small>
+    </footer>
     
   </body>
 </html>
