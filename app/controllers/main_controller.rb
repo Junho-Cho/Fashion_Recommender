@@ -10,4 +10,7 @@ class MainController < ApplicationController
 
   def market
   end
+
+  def mypage
+  end
 end
