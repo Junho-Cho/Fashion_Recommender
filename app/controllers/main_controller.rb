@@ -11,6 +11,10 @@ class MainController < ApplicationController
   def market
   end
 
+  def mypage_confirm
+  end
+
   def mypage
+    
   end
 end
