@@ -37,10 +37,27 @@
         <form class="form-inline">
             <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin-right:10px;">로그인</button>-->
             <% if user_signed_in? %>
+              <div class="level-icon" style="color: white; margin-right: 10px;">
+                <% if current_user.level == 1 %>
+                  <i class="fas fa-chess-pawn"></i>
+                <% elsif current_user.level == 2 %>
+                  <i class="fas fa-chess-rook"></i>
+                <% elsif current_user.level == 3 %>
+                  <i class="fas fa-chess-bishop"></i>
+                <% elsif current_user.level == 4 %>
+                  <i class="fas fa-chess-knight"></i>
+                <% elsif current_user.level == 5 %>
+                  <i class="fas fa-chess-queen"></i>
+                <% elsif current_user.level == 6 %>
+                  <i class="fas fa-chess-king"></i>
+                <% else %>
+                  <i class="fas fa-chess"></i>
+                <% end %>
+              </div>
               <span style="margin-right: 20px; color: white;">Lv. <%=current_user.level%> <%=current_user.nickname%></span>
-              <a href="/main/mypage">
+              <%=link_to edit_user_registration_path do %>
                 <button class="btn btn-secondary btn-sm my-2 my-sm-0" type="submit" style="margin-right: 10px;">My page</button>
-              </a>
+              <%end%>
               <%=link_to destroy_user_session_path, method: :delete do%>
                 <button class="btn btn-secondary btn-sm my-2 my-sm-0" type="submit">로그아웃</button>
               <%end%>
