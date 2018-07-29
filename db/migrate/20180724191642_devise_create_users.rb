@@ -11,6 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
 
       ## Developer Data
       t.integer :level,             default: 1
+      t.integer :exp,               default: 0
 
       ## Recoverable
       t.string   :reset_password_token
