@@ -5,6 +5,16 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'mini_magick'
+gem 'fog-aws'
+
+# gem "acts_as_rateable", :git => "git://github.com/anton-zaytsev/acts_as_rateable.git"
+
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+gem 'progress_bar'
+
 gem 'devise'
 gem 'bootstrap'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -42,6 +52,7 @@ group :development, :test do
 end
 
 group :development do
+  # gem 'sunspot_solr'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
