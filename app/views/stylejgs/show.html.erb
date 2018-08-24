@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @stylejg.title %>
+</p>
+
+<p>
+  <strong>Context:</strong>
+  <%= @stylejg.context %>
+</p>
+
+<!--<p>-->
+<!--  <strong>Image:</strong>-->
+<!--  <%= image_tag("#{@stylejg.image.main}") %>-->
+<!--</p>-->
+
+<p>
+  <strong>Rate:</strong>
+  <%= @stylejg.rates.size %> Rated!
+</p>
+
+<p>
+  <% if current_user.is_rate? (@stylejg) %>
+  <form action='/stylejg/<%= @stylejg.id%>/rate' method='post'>
+    <button>Cancel</button>
+  </form>
+  
+  <% else %>
+  <form action='/stylejg/<%= @stylejg.id%>/rate' method='post'>
+    <button>Rate!</button>
+  </form>
+  
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_stylejg_path(@stylejg) %> |
+<%= link_to 'Back', stylejgs_path %>

@@ -10,7 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180724191642) do
+ActiveRecord::Schema.define(version: 20180824102225) do
+
+  create_table "markets", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "size",       null: false
+    t.integer  "price",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "image"
+  end
+
+  create_table "rates", force: :cascade do |t|
+    t.integer  "stylejg_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["stylejg_id"], name: "index_rates_on_stylejg_id"
+    t.index ["user_id"], name: "index_rates_on_user_id"
+  end
+
+  create_table "stylejgs", force: :cascade do |t|
+    t.string   "title"
+    t.text     "context"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "image"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                   default: "", null: false

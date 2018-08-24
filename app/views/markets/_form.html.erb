@@ -1,0 +1,42 @@
+<%= form_for(market) do |f| %>
+  <% if market.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(market.errors.count, "error") %> prohibited this market from being saved:</h2>
+
+      <ul>
+      <% market.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+  
+  <!--<div class="field">-->
+  <!--  <%= f.label :image %>-->
+  <!--  <%= f.file_field :image, accept: 'image/png,image/gif,image/jpeg' %>-->
+  <!--</div>-->
+  
+  <div class="field">
+    <%= f.label :size %>
+    <%= f.select :size, ['S', 'M', 'L', 'XL', 'XXL', 'FREE'], :prompt => 'Select size' %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.number_field :price, min: 0 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

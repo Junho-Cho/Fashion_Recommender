@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @market.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @market.content %>
+</p>
+
+<!--<p>-->
+<!--  <strong>Image:</strong>-->
+<!--  <%= image_tag("#{@market.image.main}") %>-->
+<!--</p>-->
+
+<p>
+  <strong>Size:</strong>
+  <%= @market.size %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @market.price %>
+</p>
+
+<%= link_to 'Edit', edit_market_path(@market) %> |
+<%= link_to 'Back', markets_path %>
